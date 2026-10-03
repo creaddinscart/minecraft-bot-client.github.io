@@ -1,7 +1,7 @@
 var MBC = {
   name: 'MinecraftBotClient',
   shortName: 'MBC',
-  version: '1.3.1',
+  version: '2.0.0',
   repo: 'creaddinscart/MinecraftBotClient',
   branch: 'main',
   links: {
@@ -39,63 +39,229 @@ var MBC_SOURCES = [
 
 var MBC_RELEASES = [
   {
-    version: '1.3.1',
+    version: '2.0.0',
     latest: true,
     files: {
+      en: {
+        windows: {
+          zip: {
+            label: 'Windows package (English)',
+            file: 'en.zip',
+            path: 'releases/2.0.0/windows/en.zip'
+          },
+          exe: {
+            label: 'Windows client (English)',
+            file: 'MinecraftBotClient-en.exe',
+            path: 'releases/2.0.0/windows/en/MinecraftBotClient-en.exe'
+          },
+          cfg: {
+            label: 'Config file (English)',
+            file: 'config.en.json',
+            path: 'releases/2.0.0/windows/en/config.en.json',
+            bytes: 618
+          },
+          readme: {
+            label: 'Readme (English)',
+            file: 'README.en.md',
+            path: 'releases/2.0.0/windows/en/README.en.md',
+            bytes: 3651
+          }
+        },
+        macos: {
+          zip: {
+            label: 'macOS package (English, arm64)',
+            file: 'en.zip',
+            path: 'releases/2.0.0/macos/en.zip',
+            bytes: 9251615,
+            sha256: '9697a79267cb0c05cab0464760b51d39664d8834e916d14a7287e552898e8ce2'
+          },
+          bin: {
+            label: 'macOS client (English, arm64)',
+            file: 'MinecraftBotClient-en',
+            path: 'releases/2.0.0/macos/en/MinecraftBotClient-en',
+            bytes: 9391472,
+            sha256: '1e7f86c61847720d34944fda49ae13c4f45eb3fe22a574aba34734012d015ef8'
+          },
+          cfg: {
+            label: 'Config file (English)',
+            file: 'config.en.json',
+            path: 'releases/2.0.0/macos/en/config.en.json',
+            bytes: 618
+          },
+          readme: {
+            label: 'Readme (English)',
+            file: 'README.en.md',
+            path: 'releases/2.0.0/macos/en/README.en.md',
+            bytes: 3811
+          }
+        },
+        linux: {
+          zip: {
+            label: 'Linux package (English)',
+            file: 'en.zip',
+            path: 'releases/2.0.0/linux/en.zip'
+          },
+          bin: {
+            label: 'Linux client (English)',
+            file: 'MinecraftBotClient-en',
+            path: 'releases/2.0.0/linux/en/MinecraftBotClient-en'
+          },
+          cfg: {
+            label: 'Config file (English)',
+            file: 'config.en.json',
+            path: 'releases/2.0.0/linux/en/config.en.json',
+            bytes: 618
+          },
+          readme: {
+            label: 'Readme (English)',
+            file: 'README.en.md',
+            path: 'releases/2.0.0/linux/en/README.en.md',
+            bytes: 3678
+          }
+        }
+      },
       zh: {
-        zip: {
-          label: 'Full package (Chinese)',
-          file: 'zh.zip',
-          path: 'releases/1.3.1/zh.zip',
-          bytes: 17968230,
-          sha256: '6fe7343098085fd2abc81909a2523bee4baee40039de3ebb59f351264be82e1c'
+        windows: {
+          zip: {
+            label: 'Windows package (Chinese)',
+            file: 'zh.zip',
+            path: 'releases/2.0.0/windows/zh.zip'
+          },
+          exe: {
+            label: 'Windows client (Chinese)',
+            file: 'MinecraftBotClient-zh.exe',
+            path: 'releases/2.0.0/windows/zh/MinecraftBotClient-zh.exe'
+          },
+          cfg: {
+            label: 'Config file (Chinese)',
+            file: 'config.zh.json',
+            path: 'releases/2.0.0/windows/zh/config.zh.json',
+            bytes: 618
+          },
+          readme: {
+            label: 'Readme (Chinese)',
+            file: 'README.zh.md',
+            path: 'releases/2.0.0/windows/zh/README.zh.md',
+            bytes: 3618
+          }
         },
-        exe: {
-          label: 'Standalone client (Chinese)',
-          file: 'MinecraftBotClient-zh.exe',
-          path: 'releases/1.3.1/zh/MinecraftBotClient-zh.exe',
-          bytes: 18202130,
-          sha256: '9b96bc209cc083302b62af82c2cdd038d1f2ba4f7bf49a45548f30c88ee268c7'
+        macos: {
+          zip: {
+            label: 'macOS package (Chinese, arm64)',
+            file: 'zh.zip',
+            path: 'releases/2.0.0/macos/zh.zip',
+            bytes: 9251575,
+            sha256: '80fa57673fbc65f5084c478a972fa4883baad2a1c35070ab30a0621a8f80e997'
+          },
+          bin: {
+            label: 'macOS client (Chinese, arm64)',
+            file: 'MinecraftBotClient-zh',
+            path: 'releases/2.0.0/macos/zh/MinecraftBotClient-zh',
+            bytes: 9391280,
+            sha256: 'b54926e2c90180924f8c20272b586894fbbe6a406dce111d4f2d4f1a3a7f0149'
+          },
+          cfg: {
+            label: 'Config file (Chinese)',
+            file: 'config.zh.json',
+            path: 'releases/2.0.0/macos/zh/config.zh.json',
+            bytes: 618
+          },
+          readme: {
+            label: 'Readme (Chinese)',
+            file: 'README.zh.md',
+            path: 'releases/2.0.0/macos/zh/README.zh.md',
+            bytes: 3799
+          }
         },
-        cfg: {
-          label: 'Config file (Chinese)',
-          file: 'config.zh.json',
-          path: 'releases/1.3.1/zh/config.zh.json',
-          bytes: 618
-        },
-        readme: {
-          label: 'Readme (Chinese)',
-          file: 'README.zh.md',
-          path: 'releases/1.3.1/zh/README.zh.md',
-          bytes: 3523
+        linux: {
+          zip: {
+            label: 'Linux package (Chinese)',
+            file: 'zh.zip',
+            path: 'releases/2.0.0/linux/zh.zip'
+          },
+          bin: {
+            label: 'Linux client (Chinese)',
+            file: 'MinecraftBotClient-zh',
+            path: 'releases/2.0.0/linux/zh/MinecraftBotClient-zh'
+          },
+          cfg: {
+            label: 'Config file (Chinese)',
+            file: 'config.zh.json',
+            path: 'releases/2.0.0/linux/zh/config.zh.json',
+            bytes: 618
+          },
+          readme: {
+            label: 'Readme (Chinese)',
+            file: 'README.zh.md',
+            path: 'releases/2.0.0/linux/zh/README.zh.md',
+            bytes: 3666
+          }
+        }
+      }
+    }
+  },
+  {
+    version: '1.3.1',
+    latest: false,
+    files: {
+      zh: {
+        windows: {
+          zip: {
+            label: 'Full package (Chinese)',
+            file: 'zh.zip',
+            path: 'releases/1.3.1/zh.zip',
+            bytes: 17968230,
+            sha256: '6fe7343098085fd2abc81909a2523bee4baee40039de3ebb59f351264be82e1c'
+          },
+          exe: {
+            label: 'Standalone client (Chinese)',
+            file: 'MinecraftBotClient-zh.exe',
+            path: 'releases/1.3.1/zh/MinecraftBotClient-zh.exe',
+            bytes: 18202130,
+            sha256: '9b96bc209cc083302b62af82c2cdd038d1f2ba4f7bf49a45548f30c88ee268c7'
+          },
+          cfg: {
+            label: 'Config file (Chinese)',
+            file: 'config.zh.json',
+            path: 'releases/1.3.1/zh/config.zh.json',
+            bytes: 618
+          },
+          readme: {
+            label: 'Readme (Chinese)',
+            file: 'README.zh.md',
+            path: 'releases/1.3.1/zh/README.zh.md',
+            bytes: 3523
+          }
         }
       },
       en: {
-        zip: {
-          label: 'Full package (English)',
-          file: 'en.zip',
-          path: 'releases/1.3.1/en.zip',
-          bytes: 17964800,
-          sha256: '04efc44c661b4a30c394e175a9f638f693ab8b5af7b34cb98191e3f9a0e5bd59'
-        },
-        exe: {
-          label: 'Standalone client (English)',
-          file: 'MinecraftBotClient-en.exe',
-          path: 'releases/1.3.1/en/MinecraftBotClient-en.exe',
-          bytes: 18199971,
-          sha256: '912d80c052b494339e8130b7fd4c528ed23b39d8291c15ed403339bc4f854528'
-        },
-        cfg: {
-          label: 'Config file (English)',
-          file: 'config.en.json',
-          path: 'releases/1.3.1/en/config.en.json',
-          bytes: 618
-        },
-        readme: {
-          label: 'Readme (English)',
-          file: 'README.en.md',
-          path: 'releases/1.3.1/en/README.en.md',
-          bytes: 3553
+        windows: {
+          zip: {
+            label: 'Full package (English)',
+            file: 'en.zip',
+            path: 'releases/1.3.1/en.zip',
+            bytes: 17964800,
+            sha256: '04efc44c661b4a30c394e175a9f638f693ab8b5af7b34cb98191e3f9a0e5bd59'
+          },
+          exe: {
+            label: 'Standalone client (English)',
+            file: 'MinecraftBotClient-en.exe',
+            path: 'releases/1.3.1/en/MinecraftBotClient-en.exe',
+            bytes: 18199971,
+            sha256: '912d80c052b494339e8130b7fd4c528ed23b39d8291c15ed403339bc4f854528'
+          },
+          cfg: {
+            label: 'Config file (English)',
+            file: 'config.en.json',
+            path: 'releases/1.3.1/en/config.en.json',
+            bytes: 618
+          },
+          readme: {
+            label: 'Readme (English)',
+            file: 'README.en.md',
+            path: 'releases/1.3.1/en/README.en.md',
+            bytes: 3553
+          }
         }
       }
     }
@@ -105,26 +271,30 @@ var MBC_RELEASES = [
     latest: false,
     files: {
       zh: {
-        exe: {
-          label: 'Standalone client (Chinese)',
-          file: 'MinecraftBotClient-zh.exe',
-          path: 'releases/1.0.3/zh/MinecraftBotClient-zh.exe',
-          bytes: 18198418,
-          sha256: '4931952787e3eb05b6f5d1588f980f38944d3cff677638dd9f549d464048b925'
-        },
-        cfg: { label: 'Config file', file: 'config.zh.json', path: 'releases/1.0.3/zh/config.zh.json', bytes: 618 },
-        readme: { label: 'Readme', file: 'README.zh.md', path: 'releases/1.0.3/zh/README.zh.md', bytes: 2087 }
+        windows: {
+          exe: {
+            label: 'Standalone client (Chinese)',
+            file: 'MinecraftBotClient-zh.exe',
+            path: 'releases/1.0.3/zh/MinecraftBotClient-zh.exe',
+            bytes: 18198418,
+            sha256: '4931952787e3eb05b6f5d1588f980f38944d3cff677638dd9f549d464048b925'
+          },
+          cfg: { label: 'Config file', file: 'config.zh.json', path: 'releases/1.0.3/zh/config.zh.json', bytes: 618 },
+          readme: { label: 'Readme', file: 'README.zh.md', path: 'releases/1.0.3/zh/README.zh.md', bytes: 2087 }
+        }
       },
       en: {
-        exe: {
-          label: 'Standalone client (English)',
-          file: 'MinecraftBotClient-en.exe',
-          path: 'releases/1.0.3/en/MinecraftBotClient-en.exe',
-          bytes: 18196221,
-          sha256: 'c93500d6f59a96d951a26cc83d9026b21331f5966a47516da340ad4e0e26f99f'
-        },
-        cfg: { label: 'Config file', file: 'config.en.json', path: 'releases/1.0.3/en/config.en.json', bytes: 618 },
-        readme: { label: 'Readme', file: 'README.en.md', path: 'releases/1.0.3/en/README.en.md', bytes: 2062 }
+        windows: {
+          exe: {
+            label: 'Standalone client (English)',
+            file: 'MinecraftBotClient-en.exe',
+            path: 'releases/1.0.3/en/MinecraftBotClient-en.exe',
+            bytes: 18196221,
+            sha256: 'c93500d6f59a96d951a26cc83d9026b21331f5966a47516da340ad4e0e26f99f'
+          },
+          cfg: { label: 'Config file', file: 'config.en.json', path: 'releases/1.0.3/en/config.en.json', bytes: 618 },
+          readme: { label: 'Readme', file: 'README.en.md', path: 'releases/1.0.3/en/README.en.md', bytes: 2062 }
+        }
       }
     }
   },
@@ -133,26 +303,30 @@ var MBC_RELEASES = [
     latest: false,
     files: {
       zh: {
-        exe: {
-          label: 'Standalone client (Chinese)',
-          file: 'MinecraftBotClient-zh.exe',
-          path: 'releases/1.0.2/zh/MinecraftBotClient-zh.exe',
-          bytes: 18177241,
-          sha256: 'ceb2443b5f0b619d556491155bc94db9270f7dbbeac7b1ee442b51c1ec062b5c'
-        },
-        cfg: { label: 'Config file', file: 'config.zh.json', path: 'releases/1.0.2/zh/config.zh.json', bytes: 257 },
-        readme: { label: 'Readme', file: 'README.zh.md', path: 'releases/1.0.2/zh/README.zh.md', bytes: 2087 }
+        windows: {
+          exe: {
+            label: 'Standalone client (Chinese)',
+            file: 'MinecraftBotClient-zh.exe',
+            path: 'releases/1.0.2/zh/MinecraftBotClient-zh.exe',
+            bytes: 18177241,
+            sha256: 'ceb2443b5f0b619d556491155bc94db9270f7dbbeac7b1ee442b51c1ec062b5c'
+          },
+          cfg: { label: 'Config file', file: 'config.zh.json', path: 'releases/1.0.2/zh/config.zh.json', bytes: 257 },
+          readme: { label: 'Readme', file: 'README.zh.md', path: 'releases/1.0.2/zh/README.zh.md', bytes: 2087 }
+        }
       },
       en: {
-        exe: {
-          label: 'Standalone client (English)',
-          file: 'MinecraftBotClient-en.exe',
-          path: 'releases/1.0.2/en/MinecraftBotClient-en.exe',
-          bytes: 18177584,
-          sha256: '49d1465311d9af510e71aeb5f85c252b2d0b4ec8bb7bfa24fa71c42a3eecf6f5'
-        },
-        cfg: { label: 'Config file', file: 'config.en.json', path: 'releases/1.0.2/en/config.en.json', bytes: 272 },
-        readme: { label: 'Readme', file: 'README.en.md', path: 'releases/1.0.2/en/README.en.md', bytes: 2062 }
+        windows: {
+          exe: {
+            label: 'Standalone client (English)',
+            file: 'MinecraftBotClient-en.exe',
+            path: 'releases/1.0.2/en/MinecraftBotClient-en.exe',
+            bytes: 18177584,
+            sha256: '49d1465311d9af510e71aeb5f85c252b2d0b4ec8bb7bfa24fa71c42a3eecf6f5'
+          },
+          cfg: { label: 'Config file', file: 'config.en.json', path: 'releases/1.0.2/en/config.en.json', bytes: 272 },
+          readme: { label: 'Readme', file: 'README.en.md', path: 'releases/1.0.2/en/README.en.md', bytes: 2062 }
+        }
       }
     }
   }

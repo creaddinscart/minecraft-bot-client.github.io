@@ -4,9 +4,12 @@ var MBCDownloader = (function () {
   var PROBE_TIMEOUT = 4500;
   var COOLDOWN = 2600;
 
+  var PLATFORM_LABELS = { windows: 'Windows', macos: 'macOS', linux: 'Linux' };
+
   var state = {
     version: (MBC_RELEASES.filter(function (r) { return r.latest; })[0] || MBC_RELEASES[0]).version,
     lang: 'en',
+    platform: 'windows',
     busy: false
   };
 
@@ -19,10 +22,36 @@ var MBCDownloader = (function () {
     return MBC_RELEASES.filter(function (r) { return r.version === version; })[0] || MBC_RELEASES[0];
   }
 
-  function getFile(version, lang, kind) {
+  function getPack(version, lang, platform) {
     var rel = getRelease(version);
-    var pack = rel && rel.files && rel.files[lang];
+    var langPack = rel && rel.files && rel.files[lang];
+    return (langPack && langPack[platform]) || null;
+  }
+
+  function getFile(version, lang, platform, kind) {
+    var pack = getPack(version, lang, platform);
     return pack ? pack[kind] : null;
+  }
+
+  function availablePlatforms() {
+    var rel = getRelease(state.version);
+    var langPack = rel && rel.files && rel.files[state.lang];
+    return langPack ? Object.keys(langPack) : [];
+  }
+
+  function ensurePlatform() {
+    var list = availablePlatforms();
+    if (list.indexOf(state.platform) === -1) state.platform = list[0] || 'windows';
+  }
+
+  function updatePlatformButtons() {
+    var list = availablePlatforms();
+    Array.prototype.forEach.call(document.querySelectorAll('[data-platform-pick]'), function (b) {
+      var p = b.getAttribute('data-platform-pick');
+      var ok = list.indexOf(p) !== -1;
+      b.classList.toggle('off', !ok);
+      b.classList.toggle('on', ok && p === state.platform);
+    });
   }
 
   function formatBytes(bytes) {
@@ -98,20 +127,21 @@ var MBCDownloader = (function () {
   }
 
   function currentFile() {
-    return getFile(state.version, state.lang, 'zip') || getFile(state.version, state.lang, 'exe');
+    return getFile(state.version, state.lang, state.platform, 'zip') ||
+      getFile(state.version, state.lang, state.platform, 'bin') ||
+      getFile(state.version, state.lang, state.platform, 'exe');
   }
 
   function isZip(file) {
     return !!file && /\.zip$/i.test(file.file);
   }
 
-  var PKG_ORDER = ['zip', 'exe', 'cfg', 'readme'];
+  var PKG_ORDER = ['zip', 'bin', 'exe', 'cfg', 'readme'];
 
   function renderPackages() {
     var box = els.pkgs;
     if (!box) return;
-    var rel = getRelease(state.version);
-    var pack = (rel.files && rel.files[state.lang]) || {};
+    var pack = getPack(state.version, state.lang, state.platform) || {};
 
     var html = PKG_ORDER.filter(function (k) { return !!pack[k]; }).map(function (k) {
       var f = pack[k];
@@ -162,7 +192,8 @@ var MBCDownloader = (function () {
     if (els.filePath) els.filePath.textContent = file.path;
     if (els.bigLabel) {
       els.bigLabel.innerHTML = '&#11015; One-click download &middot; ' +
-        (isZip(file) ? 'full package' : 'standalone exe') + ' v' + state.version;
+        (isZip(file) ? 'full package' : 'standalone build') + ' &middot; ' +
+        (PLATFORM_LABELS[state.platform] || state.platform) + ' v' + state.version;
     }
     if (els.relBadge) els.relBadge.textContent = state.version;
   }
@@ -264,6 +295,8 @@ var MBCDownloader = (function () {
 
   function setVersion(version) {
     state.version = version;
+    ensurePlatform();
+    updatePlatformButtons();
     renderInfo();
     renderPackages();
     renderMirrors();
@@ -273,9 +306,21 @@ var MBCDownloader = (function () {
 
   function setLang(lang) {
     state.lang = lang;
+    ensurePlatform();
+    updatePlatformButtons();
     renderInfo();
     renderPackages();
     renderMirrors();
+  }
+
+  function setPlatform(platform) {
+    state.platform = platform;
+    updatePlatformButtons();
+    renderInfo();
+    renderPackages();
+    renderMirrors();
+    setStatus('Ready &middot; click the button above to download ' +
+      (PLATFORM_LABELS[platform] || platform) + ' v' + state.version);
   }
 
   function init() {
@@ -312,6 +357,13 @@ var MBCDownloader = (function () {
       });
     });
 
+    Array.prototype.forEach.call(document.querySelectorAll('[data-platform-pick]'), function (b) {
+      b.addEventListener('click', function () {
+        if (b.classList.contains('off')) return;
+        setPlatform(b.getAttribute('data-platform-pick'));
+      });
+    });
+
     if (els.big) els.big.addEventListener('click', oneClick);
 
     var refresh = $('dlRefresh');
@@ -330,6 +382,7 @@ var MBCDownloader = (function () {
     init: init,
     setVersion: setVersion,
     setLang: setLang,
+    setPlatform: setPlatform,
     formatBytes: formatBytes,
     trigger: trigger,
     state: state
