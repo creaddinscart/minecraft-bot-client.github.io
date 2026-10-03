@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minecraft Bot Client (MBC) v1.3.1</title>
+<meta name="description" content="MBC is a pure-protocol Minecraft bot client written in Python. Connects to 1.8 - 26.2 servers without game assets. Bilingual UI, SRV resolution, command autocomplete, auto-walk, auto-eat, auto-spam and human-like actions.">
+<meta name="keywords" content="Minecraft,Bot Client,MBC,offline server,protocol client,Python,auto walk,auto spam,SRV">
+<meta name="author" content="Creaddinscart">
+<meta name="theme-color" content="#0c0c0e">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Minecraft Bot Client (MBC) v1.3.1">
+<meta property="og:description" content="Pure-protocol Minecraft bot client for 1.8 - 26.2. No game assets required.">
+<meta property="og:url" content="https://shit.pub/s/developer/minecraft/client/MinecraftBotClient-MBC/MBC/">
+<link rel="icon" href="https://shit.pub/favicon.ico">
+<link rel="apple-touch-icon" href="https://shit.pub/favicon.ico">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img src="https://shit.pub/favicon.ico" alt="" width="22" height="22">
+      <span><b>MBC</b> <small>Minecraft Bot Client</small></span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#download">Download</a>
+      <a href="#features">Features</a>
+      <a href="#start">Quick start</a>
+      <a href="#config">Config</a>
+      <a href="#commands">Commands</a>
+      <a href="#protocol">Protocol</a>
+      <a href="#versions">Versions</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn" data-theme-toggle title="Toggle theme" aria-label="Toggle theme"><span data-theme-ico>&#9728;</span></button>
+      <a class="icon-btn" href="https://github.com/creaddinscart/MinecraftBotClient/" target="_blank" rel="noopener" title="GitHub repository" aria-label="GitHub">git</a>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Minecraft Bot Client</h1>
+        <p class="hero-lead">
+          A pure-protocol Minecraft bot client written in Python. No client jar, no assets, no launcher
+          &mdash; it speaks the protocol directly and drops you into an interactive console.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#download">Download v1.3.1</a>
+          <a class="btn btn-ghost btn-lg" href="https://github.com/creaddinscart/MinecraftBotClient/" target="_blank" rel="noopener">Source code</a>
+        </div>
+
+        <p class="hero-note">Offline mode &mdash; built for servers running <code>online-mode=false</code>. Testing and development use.</p>
+      </div>
+
+      <div class="term">
+        <div class="term-bar"><i></i><i></i><i></i> <span>MinecraftBotClient-zh.exe</span></div>
+        <div class="term-body">
+<div class="l"><span class="d">Minecraft Bot Client (MBC) v1.3.1</span></div>
+<div class="l"><span class="d">all Minecraft versions 1.8 - 26.2</span></div>
+<div class="l"> </div>
+<div class="l"><span class="g">[verify]</span>  remote 1.3.1, up to date</div>
+<div class="l"><span class="g">[player]</span>  Steve_7f2a</div>
+<div class="l"><span class="g">[connect]</span> mc.example.com:25565</div>
+<div class="l"><span class="g">[login]</span>   connected &middot; 1.20.6 &middot; protocol 765</div>
+<div class="l"> </div>
+<div class="l"><span class="b">&gt;</span> .wal<span class="term-caret"></span></div>
+<div class="l">  <span class="d">.walk start   .walk stop   .walk add   .walk list</span></div>
+<div class="l"> </div>
+<div class="l"><span class="b">&gt;</span> .walk add 0,64,0</div>
+<div class="l"><span class="g">[walk]</span>   waypoint added</div>
+<div class="l"><span class="b">&gt;</span> <span class="term-caret"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <dl class="specs">
+      <div class="spec"><dt>Versions</dt><dd>1.8 &ndash; 26.2</dd></div>
+      <div class="spec"><dt>Size</dt><dd>17 MB</dd></div>
+      <div class="spec"><dt>Platforms</dt><dd>Win / Linux / macOS</dd></div>
+      <div class="spec"><dt>Mode</dt><dd>offline</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="download" class="alt-bg">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Download</h2>
+      <p>Pick a version and a build, then use the button. Sources are probed before the download starts and the first one that answers is used.</p>
+    </div>
+
+    <div class="dl-shell">
+      <div class="dl-top">
+        <h3>v<span id="dlRelBadge">1.3.1</span> &mdash; release files</h3>
+
+        <div class="seg" role="group" aria-label="Version">
+          <button data-version-pick="1.3.1" class="on">1.3.1</button>
+          <button data-version-pick="1.0.3">1.0.3</button>
+          <button data-version-pick="1.0.2">1.0.2</button>
+        </div>
+
+        <div class="seg" role="group" aria-label="Build">
+          <button data-edition-pick="en" class="on">English</button>
+          <button data-edition-pick="zh">Chinese</button>
+        </div>
+      </div>
+
+      <div class="dl-body">
+        <div class="dl-main">
+          <button class="btn btn-primary btn-lg btn-block dl-big" id="dlBig"><span id="dlBigLabel">One-click download</span></button>
+
+          <div class="progress" id="dlProgress"><i id="dlProgressBar"></i></div>
+          <div class="dl-status" id="dlStatus" role="status" aria-live="polite"></div>
+
+          <div class="dl-meta">
+            <span class="chip">file <b id="dlFileName">en.zip</b></span>
+            <span class="chip">size <b id="dlFileSize">&mdash;</b></span>
+            <span class="chip mono">sha256 <b id="dlFileHash">&mdash;</b></span>
+          </div>
+          <div class="dl-meta">
+            <span class="chip mono" style="word-break:break-all">path <b id="dlFilePath">releases/</b></span>
+          </div>
+
+          <div class="hint-box">
+            <p><b>Windows builds are self-contained.</b> The published executables are PyInstaller single-file packages, so no Python installation is needed.</p>
+            <p>The full <code>.zip</code> contains the executable, the matching config file and the readme &mdash; that is the recommended first download.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="pkg-list" id="dlPkgs"></div>
+
+          <div class="hint-box" style="margin-top:12px">
+            <p><b>Keep the config beside the exe.</b> <code>config.en.json</code> must sit in the same folder as the executable, otherwise the built-in defaults are used.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mirrors">
+        <h4>Sources <button class="copy-mini" id="dlRefresh">re-test</button></h4>
+        <div id="dlMirrors"></div>
+        <p style="font-size:12px;color:var(--text-3)">Each source is probed with a HEAD request and a 4.5 second timeout. Nothing is uploaded.</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <h4>Download and extract</h4>
+        <p>Grab the full package for your build and unpack it anywhere. No installer is involved.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <h4>Edit the config</h4>
+        <p>Set <code>server_address</code> and <code>minecraft_version</code>. Leave <code>username</code> empty for a random name.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <h4>Run the executable</h4>
+        <p>Double-click the exe. Once the login succeeds you get an interactive console.</p>
+      </div>
+    </div>
+
+    <div class="req-grid">
+      <div class="req"><b>Windows 10 / 11</b><span>Primary target of the shipped 64-bit executables.</span></div>
+      <div class="req"><b>Linux / macOS</b><span>Run from source with Python 3.8 or newer.</span></div>
+      <div class="req"><b>Python 3.8+</b><span>Only needed when running <code>main.py</code> directly.</span></div>
+      <div class="req"><b>Network access</b><span>For the version check and announcement fetch. Skip with <code>fast_start</code>.</span></div>
+    </div>
+
+    <div class="notice warn">
+      <div>
+        <b>Antivirus false positives</b>
+        <p>PyInstaller single-file executables unpack themselves at runtime and are frequently flagged heuristically. Whitelist the folder, or run from source with <code>python main.py</code>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Features</h2>
+      <p>Implemented in the client itself. No mods, no game assets, no launcher.</p>
+    </div>
+
+    <dl class="spec-list">
+      <div class="spec-row"><dt>Version support</dt><dd>Auto-detects the server protocol for any version between 1.8 and 26.2. Unlisted versions inside a range map to the nearest known protocol ID.</dd></div>
+      <div class="spec-row"><dt>SRV records</dt><dd>Resolves <code>_minecraft._tcp.&lt;domain&gt;</code> automatically, so a bare domain works without specifying a port.</dd></div>
+      <div class="spec-row"><dt>Bilingual UI</dt><dd>Chinese or English, selected from the executable suffix: <code>-zh</code> or <code>-en</code>.</dd></div>
+      <div class="spec-row"><dt>Autocomplete</dt><dd>Vanilla-style grey inline preview on <code>.</code> or <code>/</code>. Tab completes and cycles, arrow keys and the mouse wheel browse suggestions.</dd></div>
+      <div class="spec-row"><dt>Chat and commands</dt><dd>Plain text is sent as chat, a leading <code>/</code> sends a server command, a leading <code>.</code> runs a client command that never reaches the server.</dd></div>
+      <div class="spec-row"><dt>Client commands</dt><dd>Ten command families covering connection, logging, spam, walking, eating and live config edits. The legacy <code>//</code> prefix still works.</dd></div>
+      <div class="spec-row"><dt>Human-like actions</dt><dd>Head turns and arm swings follow B&eacute;zier trajectories with randomised delays, mimicking real mouse movement.</dd></div>
+      <div class="spec-row"><dt>Auto-walk</dt><dd>Random roaming or custom waypoints. Movement stops automatically on damage or death.</dd></div>
+      <div class="spec-row"><dt>Auto-eat</dt><dd>Attempts to eat whenever health falls below a configurable threshold. Toggled at runtime with <code>.eat on</code> and <code>.eat off</code>.</dd></div>
+      <div class="spec-row"><dt>Proximity alerts</dt><dd>Reports nearby players and missing blocks ahead. Printed locally, invisible to other players.</dd></div>
+      <div class="spec-row"><dt>Auto-spam</dt><dd>Configurable rate and message list, persisted to the config file so it survives restarts.</dd></div>
+      <div class="spec-row"><dt>Session logging</dt><dd>Writes a timestamped <code>.log</code> file into <code>log/</code> for every session while logging is enabled.</dd></div>
+      <div class="spec-row"><dt>Remote checks</dt><dd>Displays remote version and announcement text verbatim on startup. Skip both with <code>fast_start</code>.</dd></div>
+      <div class="spec-row"><dt>Offline mode</dt><dd>Designed for <code>online-mode=false</code> servers. Premium account support is still in development.</dd></div>
+      <div class="spec-row"><dt>Cross-platform</dt><dd>Windows, Linux and macOS, distributed as a single-file executable built with PyInstaller.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="start" class="alt-bg">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Quick start</h2>
+      <p>Use a release build, run from source, or produce your own executable.</p>
+    </div>
+
+    <div data-tab-group>
+      <div class="tabs">
+        <button class="tab on" data-tab="t1">Release build</button>
+        <button class="tab" data-tab="t2">From source</button>
+        <button class="tab" data-tab="t3">Build an exe</button>
+      </div>
+
+      <div class="tab-panel on" data-panel="t1">
+        <div class="code-wrap">
+          <div class="code-head">
+            <span class="code-title">folder layout</span>
+            <button class="code-copy" data-copy-target="#codeRelease">copy</button>
+          </div>
+<pre class="code" id="codeRelease"><span class="c"># after extracting releases/1.3.1/en.zip</span>
+MBC/
+  MinecraftBotClient-en.exe
+  config.en.json
+  README.en.md
+
+<span class="c"># edit config.en.json</span>
+{
+  <span class="p">"username"</span>: <span class="s">""</span>,                      <span class="c">// empty = random name</span>
+  <span class="p">"server_address"</span>: <span class="s">"mc.example.com"</span>,  <span class="c">// SRV domains need no port</span>
+  <span class="p">"minecraft_version"</span>: <span class="s">"1.20.6"</span>
+}
+
+<span class="c"># then double-click MinecraftBotClient-en.exe</span></pre>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-panel="t2">
+        <div class="code-wrap">
+          <div class="code-head">
+            <span class="code-title">bash</span>
+            <button class="code-copy" data-copy-target="#codeSource">copy</button>
+          </div>
+<pre class="code" id="codeSource"><span class="c"># clone</span>
+git clone https://github.com/creaddinscart/MinecraftBotClient.git
+cd MinecraftBotClient
+
+<span class="c"># dependencies</span>
+pip install requests cryptography dnspython
+
+<span class="c"># run</span>
+python main.py
+
+<span class="c"># requests      version check and announcements</span>
+<span class="c"># cryptography  AES / RSA for online-mode login (unused offline)</span>
+<span class="c"># dnspython     SRV record resolution</span></pre>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-panel="t3">
+        <div class="code-wrap">
+          <div class="code-head">
+            <span class="code-title">bash</span>
+            <button class="code-copy" data-copy-target="#codeBuild">copy</button>
+          </div>
+<pre class="code" id="codeBuild"><span class="c"># packaging dependency</span>
+pip install pyinstaller
+
+<span class="c"># build both language editions</span>
+python build.py
+
+<span class="c"># output</span>
+releases/
+  1.3.1/
+    zh/   MinecraftBotClient-zh.exe  config.zh.json  README.zh.md
+    en/   MinecraftBotClient-en.exe  config.en.json  README.en.md</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="config">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Configuration</h2>
+      <p>Edit the values and the JSON updates as you type. Download it, or copy it into the config file next to the executable.</p>
+    </div>
+
+    <div class="cfg-shell">
+      <form class="cfg-form" id="cfgForm" autocomplete="off">
+        <div class="cfg-group">
+          <h4>Connection</h4>
+
+          <div class="field">
+            <label for="f-username">username</label>
+            <input type="text" id="f-username" name="username" value="" placeholder="empty = random">
+            <span class="hint">Player name. Empty generates a random one.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-server">server_address</label>
+            <input type="text" id="f-server" name="server_address" value="localhost:25565">
+            <span class="hint">SRV domains work without a port, or write host:port explicitly.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-version">minecraft_version</label>
+            <input type="text" id="f-version" name="minecraft_version" value="1.8.9" list="verList">
+            <datalist id="verList">
+              <option value="1.8.9"></option><option value="1.12.2"></option>
+              <option value="1.16.5"></option><option value="1.18.2"></option>
+              <option value="1.19.4"></option><option value="1.20.6"></option>
+              <option value="1.21.8"></option><option value="26.2"></option>
+            </datalist>
+            <span class="hint">Any version from 1.8 to 26.2. The real protocol is probed before login.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-lang">language</label>
+            <select id="f-lang" name="language">
+              <option value="en">en</option>
+              <option value="zh">zh</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-fast">fast_start</label>
+            <input type="checkbox" id="f-fast" name="fast_start">
+            <span class="hint">Skip the remote version check and announcement fetch.</span>
+          </div>
+        </div>
+
+        <div class="cfg-group">
+          <h4>Behaviour</h4>
+
+          <div class="field">
+            <label for="f-ac">command_autocomplete</label>
+            <input type="checkbox" id="f-ac" name="command_autocomplete" checked>
+          </div>
+
+          <div class="field">
+            <label for="f-hum">human_actions</label>
+            <input type="checkbox" id="f-hum" name="human_actions" checked>
+          </div>
+
+          <div class="field">
+            <label for="f-hmin">human_action_interval_min</label>
+            <input type="number" id="f-hmin" name="human_action_interval_min" value="2.0" step="0.5" min="0">
+          </div>
+
+          <div class="field">
+            <label for="f-hmax">human_action_interval_max</label>
+            <input type="number" id="f-hmax" name="human_action_interval_max" value="7.0" step="0.5" min="0">
+            <span class="hint">Random head-turn and arm-swing delay, in seconds.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-eat">auto_eat</label>
+            <input type="checkbox" id="f-eat" name="auto_eat" checked>
+          </div>
+
+          <div class="field">
+            <label for="f-eatth">auto_eat_health_threshold</label>
+            <input type="number" id="f-eatth" name="auto_eat_health_threshold" value="10" min="1" max="20">
+          </div>
+
+          <div class="field">
+            <label for="f-walk">auto_walk</label>
+            <input type="checkbox" id="f-walk" name="auto_walk">
+          </div>
+
+          <div class="field wide">
+            <label for="f-walkwp">auto_walk_waypoints</label>
+            <input type="text" id="f-walkwp" name="auto_walk_waypoints" value="" placeholder="0,64,0; 10,64,10">
+            <span class="hint">Relative coordinates separated by semicolons. Empty means fully random roaming.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-stop">stop_walk_on_damage</label>
+            <input type="checkbox" id="f-stop" name="stop_walk_on_damage" checked>
+          </div>
+
+          <div class="field">
+            <label for="f-prox">proximity_alerts</label>
+            <input type="checkbox" id="f-prox" name="proximity_alerts" checked>
+          </div>
+
+          <div class="field">
+            <label for="f-proxd">proximity_distance</label>
+            <input type="number" id="f-proxd" name="proximity_distance" value="5.0" step="0.5" min="1">
+            <span class="hint">Alert radius in blocks.</span>
+          </div>
+        </div>
+
+        <div class="cfg-group">
+          <h4>Logging and spam</h4>
+
+          <div class="field">
+            <label for="f-log">log_enabled</label>
+            <input type="checkbox" id="f-log" name="log_enabled">
+            <span class="hint">Write a timestamped .log into <code>log/</code> each session.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-spam">spam_enabled</label>
+            <input type="checkbox" id="f-spam" name="spam_enabled">
+          </div>
+
+          <div class="field">
+            <label for="f-rate">spam_rate</label>
+            <input type="number" id="f-rate" name="spam_rate" value="1.0" step="0.1" min="0.1">
+            <span class="hint">Messages per second.</span>
+          </div>
+
+          <div class="field wide">
+            <label for="f-msgs">spam_messages</label>
+            <input type="text" id="f-msgs" name="spam_messages" value="Hello!; Anyone there?; GG">
+            <span class="hint">Separated by semicolons.</span>
+          </div>
+        </div>
+
+        <input type="hidden" name="version" value="1.3.1">
+
+        <div class="cfg-actions">
+          <button type="button" class="btn btn-ghost btn-sm" id="cfgReset">Restore defaults</button>
+          <button type="button" class="btn btn-primary btn-sm" id="cfgDownload">Download config.json</button>
+        </div>
+      </form>
+
+      <div class="cfg-out">
+        <div class="code-wrap">
+          <div class="code-head">
+            <span class="code-title">config.json</span>
+            <button class="code-copy" data-copy-target="#cfgOut">copy</button>
+          </div>
+<pre class="code" id="cfgOut"></pre>
+        </div>
+        <p style="font-size:12.5px;color:var(--text-3);margin-top:10px">
+          The file must live in the same folder as the executable. Every key can also be changed at runtime with
+          <code>.config &lt;key&gt; &lt;value&gt;</code>.
+        </p>
+      </div>
+    </div>
+
+    <div class="table-scroll" style="margin-top:28px">
+      <table>
+        <thead>
+          <tr><th>Key</th><th>Type</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>username</code></td><td>string</td><td>Player name. Empty generates a random one.</td></tr>
+          <tr><td><code>server_address</code></td><td>string</td><td>Server address. SRV domains are supported, or write host:port.</td></tr>
+          <tr><td><code>minecraft_version</code></td><td>string</td><td>Server version, anything between 1.8 and 26.2.</td></tr>
+          <tr><td><code>language</code></td><td>string</td><td>UI language, <code>zh</code> or <code>en</code>.</td></tr>
+          <tr><td><code>fast_start</code></td><td>boolean</td><td>Skip the version and announcement checks on startup.</td></tr>
+          <tr><td><code>log_enabled</code></td><td>boolean</td><td>Enable session logging by default.</td></tr>
+          <tr><td><code>spam_enabled</code>, <code>spam_rate</code>, <code>spam_messages</code></td><td>bool, float, array</td><td>Auto-spam switch, rate in messages per second, and the message list.</td></tr>
+          <tr><td><code>command_autocomplete</code></td><td>boolean</td><td>Toggle the grey inline command preview.</td></tr>
+          <tr><td><code>auto_eat</code>, <code>auto_eat_health_threshold</code></td><td>bool, int</td><td>Auto-eat switch and the health value that triggers it.</td></tr>
+          <tr><td><code>auto_walk</code>, <code>auto_walk_waypoints</code></td><td>bool, array</td><td>Auto-walk switch and custom waypoints in relative coordinates.</td></tr>
+          <tr><td><code>stop_walk_on_damage</code></td><td>boolean</td><td>Stop walking automatically when damaged or killed.</td></tr>
+          <tr><td><code>proximity_alerts</code>, <code>proximity_distance</code></td><td>bool, float</td><td>Nearby-player alerts and the radius in blocks.</td></tr>
+          <tr><td><code>human_actions</code>, <code>human_action_interval_min</code>, <code>human_action_interval_max</code></td><td>bool, float, float</td><td>Human-like actions and the random interval bounds in seconds.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="commands" class="alt-bg">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Commands</h2>
+      <p>A leading <code>.</code> runs a client command that is never sent to the server, a leading <code>/</code> sends a server command, anything else goes out as chat.</p>
+    </div>
+
+    <div class="filter-bar">
+      <input class="input" id="cmdSearch" type="search" placeholder="Filter commands">
+      <select class="input" id="cmdGroup">
+        <option value="all">All categories</option>
+        <option value="core">Basics</option>
+        <option value="log">Logging</option>
+        <option value="spam">Auto-spam</option>
+        <option value="walk">Auto-walk</option>
+        <option value="eat">Auto-eat</option>
+        <option value="config">Configuration</option>
+      </select>
+      <span class="count-badge" id="cmdCount"></span>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th style="width:210px">Command</th><th>Description</th><th style="width:70px"></th></tr>
+        </thead>
+        <tbody id="cmdBody"></tbody>
+      </table>
+    </div>
+
+    <div class="sec-head" style="margin:36px 0 16px">
+      <h2 style="font-size:19px">Autocomplete keys</h2>
+    </div>
+
+    <div class="table-scroll" style="max-width:760px">
+      <table>
+        <thead>
+          <tr><th style="width:150px">Key</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><kbd>.</kbd> or <kbd>/</kbd></td><td>Show the grey inline preview.</td></tr>
+          <tr><td><kbd>Tab</kbd></td><td>Accept the preview, press again to cycle suggestions.</td></tr>
+          <tr><td><kbd>&uarr;</kbd> / <kbd>&darr;</kbd></td><td>Cycle suggestions. Up also browses command history.</td></tr>
+          <tr><td>Mouse wheel</td><td>Cycle suggestions.</td></tr>
+          <tr><td><kbd>Enter</kbd></td><td>Send the input.</td></tr>
+          <tr><td><kbd>Esc</kbd></td><td>Clear the input.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="protocol">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Protocol support</h2>
+      <p>Highest protocol ID per version range. The client probes the server for its real protocol before login, so an exact version is not required.</p>
+    </div>
+
+    <div class="table-scroll" style="max-width:860px">
+      <table>
+        <thead>
+          <tr><th>Version range</th><th>Examples</th><th>Protocol ID</th><th>Mapping</th></tr>
+        </thead>
+        <tbody id="protoBody"></tbody>
+      </table>
+    </div>
+
+    <div class="sec-head" style="margin:36px 0 16px">
+      <h2 style="font-size:19px">Version lookup</h2>
+      <p>Enter a version to see which range it falls into.</p>
+    </div>
+
+    <form id="verForm" style="max-width:620px">
+      <div class="filter-bar">
+        <input class="input" id="verInput" type="text" placeholder="e.g. 1.20.6" style="max-width:220px">
+        <button class="btn btn-ghost btn-sm" type="submit">Look up</button>
+      </div>
+      <div class="filter-bar" style="margin-top:-7px">
+        <button type="button" class="btn btn-ghost btn-sm" data-ver-quick="1.8.9">1.8.9</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-ver-quick="1.12.2">1.12.2</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-ver-quick="1.16.5">1.16.5</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-ver-quick="1.20.6">1.20.6</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-ver-quick="1.21.8">1.21.8</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-ver-quick="26.2">26.2</button>
+      </div>
+      <div class="dl-status" id="verOut"></div>
+    </form>
+  </div>
+</section>
+
+<section id="versions" class="alt-bg">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Versions</h2>
+      <p>Every published build lives under <code>releases/&lt;version&gt;/</code>. These buttons use the same source probing as the download panel.</p>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>Status</th><th>Files</th><th>Download</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>1.3.1</b></td>
+            <td><span class="chip green">latest</span></td>
+            <td><code>zh.zip</code> <code>en.zip</code><br><code>MinecraftBotClient-zh.exe</code> <code>MinecraftBotClient-en.exe</code></td>
+            <td class="td-act">
+              <button class="btn btn-ghost btn-sm" data-dl-path="releases/1.3.1/en.zip" data-dl-file="en.zip">English zip</button>
+              <button class="btn btn-ghost btn-sm" data-dl-path="releases/1.3.1/zh.zip" data-dl-file="zh.zip">Chinese zip</button>
+            </td>
+          </tr>
+          <tr>
+            <td><b>1.0.3</b></td>
+            <td><span class="chip">archived</span></td>
+            <td><code>MinecraftBotClient-en.exe</code><br><code>MinecraftBotClient-zh.exe</code></td>
+            <td class="td-act">
+              <button class="btn btn-ghost btn-sm" data-dl-path="releases/1.0.3/en/MinecraftBotClient-en.exe" data-dl-file="MinecraftBotClient-en.exe">English exe</button>
+              <button class="btn btn-ghost btn-sm" data-dl-path="releases/1.0.3/zh/MinecraftBotClient-zh.exe" data-dl-file="MinecraftBotClient-zh.exe">Chinese exe</button>
+            </td>
+          </tr>
+          <tr>
+            <td><b>1.0.2</b></td>
+            <td><span class="chip">archived</span></td>
+            <td><code>MinecraftBotClient-en.exe</code><br><code>MinecraftBotClient-zh.exe</code></td>
+            <td class="td-act">
+              <button class="btn btn-ghost btn-sm" data-dl-path="releases/1.0.2/en/MinecraftBotClient-en.exe" data-dl-file="MinecraftBotClient-en.exe">English exe</button>
+              <button class="btn btn-ghost btn-sm" data-dl-path="releases/1.0.2/zh/MinecraftBotClient-zh.exe" data-dl-file="MinecraftBotClient-zh.exe">Chinese exe</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="notice info">
+      <div>
+        <b>Build layout</b>
+        <p><code>build.py</code> writes a <code>zh/</code> and an <code>en/</code> folder per version, each holding the executable, the matching config and a readme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>FAQ</h2>
+    </div>
+
+    <div class="faq">
+      <details class="qa">
+        <summary>Can I join a premium (online-mode) server?</summary>
+        <div class="qa-body">
+          <p>No. The client runs in offline mode and targets servers with <code>online-mode=false</code>. A premium server rejects the login with an auth failure, which is expected behaviour.</p>
+          <p>Premium account support is still in development.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>My antivirus flags the executable</summary>
+        <div class="qa-body">
+          <p>PyInstaller single-file executables unpack themselves at runtime, which heuristic scanners commonly flag. This is a false positive.</p>
+          <p>Either whitelist the folder or run the project from source with <code>python main.py</code>.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Do I need to install Minecraft?</summary>
+        <div class="qa-body">
+          <p>No. MBC speaks the Minecraft protocol directly and ships without game assets &mdash; no client jar, no textures, no launcher. That is why the whole client fits in a single 17 MB file.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>How do I change the server without editing JSON?</summary>
+        <div class="qa-body">
+          <p>Use the client commands. <code>.esc</code> leaves the current server while keeping the client open, and <code>.connect</code> reconnects with the current config.</p>
+          <p>To retarget, run <code>.config server_address mc.example.com</code> and then <code>.connect</code>.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Where are the log files?</summary>
+        <div class="qa-body">
+          <p>In a <code>log/</code> folder beside the executable. Each session creates a new timestamped file such as <code>MBC-2026-09-04_22-55-29.log</code> while logging is enabled.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>How do I know my server version is supported?</summary>
+        <div class="qa-body">
+          <p>Anything from 1.8 to 26.2 works. Type the version into the lookup box in the protocol section, or just set <code>minecraft_version</code> in the config &mdash; the client probes the server for its real protocol before login.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Startup failed. What should I check?</summary>
+        <div class="qa-body">
+          <p>In order: is the config file in the same folder as the executable, is <code>server_address</code> reachable with the right port, does the server allow offline-mode clients, and is a restricted network blocking the version check?</p>
+          <p>For the last one, set <code>fast_start</code> to <code>true</code>. The client prints a full traceback, and the same text is written to the session log when logging is enabled.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Is this allowed on public servers?</summary>
+        <div class="qa-body">
+          <p>That depends on the server. Many ban automated clients outright. MBC is published for testing and development &mdash; check the rules before using it anywhere.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="tight alt-bg">
+  <div class="wrap">
+    <div class="notice danger" style="margin-top:0">
+      <div>
+        <b>Disclaimer</b>
+        <p>Provided for testing and development purposes only. You are responsible for complying with the rules of any server you connect to and with the laws of your jurisdiction. The authors accept no liability for misuse or its consequences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <img src="https://shit.pub/favicon.ico" alt="" width="22" height="22">
+          <span><b>MBC</b> <small>Minecraft Bot Client</small></span>
+        </a>
+        <p>A pure-protocol Minecraft bot client written in Python. No game assets and no launcher &mdash; connect, chat, automate.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Project</h4>
+        <a href="#download">Download</a>
+        <a href="#features">Features</a>
+        <a href="#start">Quick start</a>
+        <a href="#versions">All versions</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Docs</h4>
+        <a href="#commands">Command reference</a>
+        <a href="#config">Configuration</a>
+        <a href="#protocol">Protocol support</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Links</h4>
+        <a href="https://github.com/creaddinscart/MinecraftBotClient/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://shit.pub/s/developer/minecraft/client/MinecraftBotClient-MBC/MBC/" target="_blank" rel="noopener">Help site</a>
+        <a href="https://shit.pub/an/tz/1007/gadd/" target="_blank" rel="noopener">Our servers</a>
+        <a href="https://discord.gg/yY3nDGzSn5" target="_blank" rel="noopener">Discord</a>
+        <a href="https://raw.githubusercontent.com/creaddinscart/MinecraftBotClient/refs/heads/main/license" target="_blank" rel="noopener">License</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>&copy; <span id="year">2026</span> MinecraftBotClient &mdash; testing and development use only</span>
+      <span>Not affiliated with Mojang or Microsoft. Minecraft is a trademark of Mojang Synergies AB.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">&uarr;</button>
+<div class="toast-box" id="toastBox" aria-live="polite"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/downloads.js"></script>
+<script src="assets/js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
