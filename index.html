@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Minecraft Bot Client (MBC) v2.0.0</title>
-<meta name="description" content="MBC is a pure-protocol Minecraft bot client written in Python. Connects to 1.8 - 26.2 servers without game assets. Native Windows, macOS and Linux builds, bilingual UI, SRV resolution, command autocomplete, auto-walk, auto-eat, auto-spam and human-like actions.">
+<title>Minecraft Bot Client (MBC) v2.1.0</title>
+<meta name="description" content="MBC is a pure-protocol Minecraft bot client written in Python. Connects to 1.8 - 26.2 servers without game assets. Native Windows, macOS and Linux builds, multi-bot mode with automatic /register and /login, bilingual UI, SRV resolution, command autocomplete, auto-walk, auto-eat, auto-spam and human-like actions.">
 <meta name="keywords" content="Minecraft,Bot Client,MBC,offline server,protocol client,Python,macOS,Linux,auto walk,auto spam,SRV">
 <meta name="author" content="Creaddinscart">
 <meta name="theme-color" content="#07090d">
@@ -13,18 +13,18 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Minecraft Bot Client (MBC)">
-<meta property="og:title" content="Minecraft Bot Client (MBC) v2.0.0">
+<meta property="og:title" content="Minecraft Bot Client (MBC) v2.1.0">
 <meta property="og:description" content="Pure-protocol Minecraft bot client for 1.8 - 26.2 with native Windows, macOS and Linux builds. No game assets required.">
 <meta property="og:url" content="https://mbc.shit.pub/">
 <meta property="og:image" content="https://mbc.shit.pub/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Minecraft Bot Client (MBC) v2.0.0 - pure-protocol Minecraft bot client for Windows, macOS and Linux">
+<meta property="og:image:alt" content="Minecraft Bot Client (MBC) v2.1.0 - pure-protocol Minecraft bot client for Windows, macOS and Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Minecraft Bot Client (MBC) v2.0.0">
+<meta name="twitter:title" content="Minecraft Bot Client (MBC) v2.1.0">
 <meta name="twitter:description" content="Pure-protocol Minecraft bot client for 1.8 - 26.2 with native Windows, macOS and Linux builds. No game assets required.">
 <meta name="twitter:image" content="https://mbc.shit.pub/assets/img/og.png">
-<meta name="twitter:image:alt" content="Minecraft Bot Client (MBC) v2.0.0">
+<meta name="twitter:image:alt" content="Minecraft Bot Client (MBC) v2.1.0">
 <link rel="icon" href="https://shit.pub/favicon.ico">
 <link rel="apple-touch-icon" href="https://shit.pub/favicon.ico">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -37,7 +37,7 @@
   "applicationCategory": "UtilitiesApplication",
   "applicationSubCategory": "Minecraft bot client",
   "operatingSystem": "Windows, macOS, Linux",
-  "softwareVersion": "2.0.0",
+  "softwareVersion": "2.1.0",
   "fileSize": "9MB - 18MB",
   "softwareRequirements": "Python 3.8 or newer only when running from source",
   "url": "https://mbc.shit.pub/",
@@ -100,7 +100,7 @@
         </p>
 
         <div class="hero-cta">
-          <a class="btn btn-primary btn-lg" href="#download">Download v2.0.0</a>
+          <a class="btn btn-primary btn-lg" href="#download">Download v2.1.0</a>
           <a class="btn btn-ghost btn-lg" href="https://github.com/creaddinscart/MinecraftBotClient/" target="_blank" rel="noopener">Source code</a>
         </div>
 
@@ -110,10 +110,10 @@
       <div class="term">
         <div class="term-bar"><i></i><i></i><i></i> <span>MinecraftBotClient-en</span></div>
         <div class="term-body">
-<div class="l"><span class="d">Minecraft Bot Client (MBC) v2.0.0</span></div>
+<div class="l"><span class="d">Minecraft Bot Client (MBC) v2.1.0</span></div>
 <div class="l"><span class="d">all Minecraft versions 1.8 - 26.2</span></div>
 <div class="l"> </div>
-<div class="l"><span class="g">[verify]</span>  remote 2.0.0, up to date</div>
+<div class="l"><span class="g">[verify]</span>  remote 2.1.0, up to date</div>
 <div class="l"><span class="g">[player]</span>  Steve_7f2a</div>
 <div class="l"><span class="g">[connect]</span> mc.example.com:25565</div>
 <div class="l"><span class="g">[login]</span>   connected &middot; 1.20.6 &middot; protocol 765</div>
@@ -146,10 +146,12 @@
 
     <div class="dl-shell">
       <div class="dl-top">
-        <h3>v<span id="dlRelBadge">2.0.0</span> &mdash; release files</h3>
+        <h3>v<span id="dlRelBadge">2.1.0</span> &mdash; release files</h3>
 
         <div class="seg" role="group" aria-label="Version">
-          <button data-version-pick="2.0.0" class="on">2.0.0</button>
+          
+          <button data-version-pick="2.1.0" class="on">2.1.0</button>
+          <button data-version-pick="2.0.0">2.0.0</button>
           <button data-version-pick="1.3.1">1.3.1</button>
           <button data-version-pick="1.0.3">1.0.3</button>
           <button data-version-pick="1.0.2">1.0.2</button>
@@ -256,6 +258,7 @@
       <div class="spec-row"><dt>Chat and commands</dt><dd>Plain text is sent as chat, a leading <code>/</code> sends a server command, a leading <code>.</code> runs a client command that never reaches the server.</dd></div>
       <div class="spec-row"><dt>Client commands</dt><dd>Ten command families covering connection, logging, spam, walking, eating and live config edits. The legacy <code>//</code> prefix still works.</dd></div>
       <div class="spec-row"><dt>Human-like actions</dt><dd>Head turns and arm swings follow B&eacute;zier trajectories with randomised delays, mimicking real mouse movement.</dd></div>
+      <div class="spec-row"><dt>Multi-bot mode</dt><dd>Launch 20, 100 or more bots from the config with unique random usernames, staggered joins and automatic <code>/register</code> or <code>/login</code> after each bot connects. Broadcast chat to the whole group with <code>.say</code>.</dd></div>
       <div class="spec-row"><dt>Auto-walk</dt><dd>Random roaming or custom waypoints. Movement stops automatically on damage or death.</dd></div>
       <div class="spec-row"><dt>Auto-eat</dt><dd>Attempts to eat whenever health falls below a configurable threshold. Toggled at runtime with <code>.eat on</code> and <code>.eat off</code>.</dd></div>
       <div class="spec-row"><dt>Proximity alerts</dt><dd>Reports nearby players and missing blocks ahead. Printed locally, invisible to other players.</dd></div>
@@ -288,7 +291,7 @@
             <span class="code-title">folder layout</span>
             <button class="code-copy" data-copy-target="#codeRelease">copy</button>
           </div>
-<pre class="code" id="codeRelease"><span class="c"># after extracting releases/2.0.0/windows/en.zip (or macos/, linux/)</span>
+<pre class="code" id="codeRelease"><span class="c"># after extracting releases/2.1.0/windows/en.zip (or macos/, linux/)</span>
 MBC/
   MinecraftBotClient-en.exe   <span class="c"># Windows</span>
   MinecraftBotClient-en       <span class="c"># macOS / Linux</span>
@@ -345,7 +348,7 @@ python build.py
 
 <span class="c"># output (run the script once on each OS you ship)</span>
 releases/
-  2.0.0/
+  2.1.0/
     windows/  en/ MinecraftBotClient-en.exe  config.en.json  README.en.md
               zh/ MinecraftBotClient-zh.exe  config.zh.json  README.zh.md
               en.zip  zh.zip
@@ -499,7 +502,78 @@ releases/
           </div>
         </div>
 
-        <input type="hidden" name="version" value="2.0.0">
+        <div class="cfg-group">
+          <h4>Multi-bot</h4>
+
+          <div class="field">
+            <label for="f-mb">multi_bot_enabled</label>
+            <input type="checkbox" id="f-mb" name="multi_bot_enabled">
+            <span class="hint">Launch several bots from one client. The console switches to swarm control: .status, .say, .exit.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-bc">bot_count</label>
+            <input type="number" id="f-bc" name="bot_count" value="10" min="1" max="500">
+            <span class="hint">How many bots to launch, e.g. 20 or 100.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-bp">bot_name_prefix</label>
+            <input type="text" id="f-bp" name="bot_name_prefix" value="Bot">
+          </div>
+
+          <div class="field">
+            <label for="f-bd">bot_name_digits</label>
+            <input type="number" id="f-bd" name="bot_name_digits" value="4" min="2" max="6">
+            <span class="hint">Random digits appended to the prefix, e.g. Bot4821.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-bjd">bot_join_delay</label>
+            <input type="number" id="f-bjd" name="bot_join_delay" value="0.5" step="0.1" min="0">
+            <span class="hint">Seconds between bot connections.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-ba">bot_auth_enabled</label>
+            <input type="checkbox" id="f-ba" name="bot_auth_enabled">
+            <span class="hint">Send /register or /login automatically after each bot joins.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-bam">bot_auth_mode</label>
+            <select id="f-bam" name="bot_auth_mode">
+              <option value="register">register</option>
+              <option value="login">login</option>
+              <option value="both">both</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-bap">bot_auth_password</label>
+            <input type="text" id="f-bap" name="bot_auth_password" value="">
+            <span class="hint">Password used by the auth commands.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-bad">bot_auth_delay</label>
+            <input type="number" id="f-bad" name="bot_auth_delay" value="1.5" step="0.5" min="0">
+            <span class="hint">Seconds after joining before the auth command is sent.</span>
+          </div>
+
+          <div class="field wide">
+            <label for="f-barc">bot_auth_register_command</label>
+            <input type="text" id="f-barc" name="bot_auth_register_command" value="/register {password} {password}">
+          </div>
+
+          <div class="field wide">
+            <label for="f-balc">bot_auth_login_command</label>
+            <input type="text" id="f-balc" name="bot_auth_login_command" value="/login {password}">
+            <span class="hint">{password} is replaced with bot_auth_password.</span>
+          </div>
+        </div>
+
+        <input type="hidden" name="version" value="2.1.0">
 
         <div class="cfg-actions">
           <button type="button" class="btn btn-ghost btn-sm" id="cfgReset">Restore defaults</button>
@@ -541,6 +615,13 @@ releases/
           <tr><td><code>stop_walk_on_damage</code></td><td>boolean</td><td>Stop walking automatically when damaged or killed.</td></tr>
           <tr><td><code>proximity_alerts</code>, <code>proximity_distance</code></td><td>bool, float</td><td>Nearby-player alerts and the radius in blocks.</td></tr>
           <tr><td><code>human_actions</code>, <code>human_action_interval_min</code>, <code>human_action_interval_max</code></td><td>bool, float, float</td><td>Human-like actions and the random interval bounds in seconds.</td></tr>
+          <tr><td><code>multi_bot_enabled</code>, <code>bot_count</code></td><td>bool, int</td><td>Multi-bot mode and how many bots to launch (e.g. 20 or 100).</td></tr>
+          <tr><td><code>bot_name_prefix</code>, <code>bot_name_digits</code></td><td>string, int</td><td>Random username prefix and number of random digits appended.</td></tr>
+          <tr><td><code>bot_join_delay</code></td><td>float</td><td>Seconds between bot connections.</td></tr>
+          <tr><td><code>bot_auth_enabled</code>, <code>bot_auth_mode</code></td><td>bool, string</td><td>Auto-login switch and mode: <code>register</code>, <code>login</code> or <code>both</code>.</td></tr>
+          <tr><td><code>bot_auth_password</code></td><td>string</td><td>Password used in the auth commands.</td></tr>
+          <tr><td><code>bot_auth_delay</code></td><td>float</td><td>Seconds after joining before the auth command is sent.</td></tr>
+          <tr><td><code>bot_auth_register_command</code>, <code>bot_auth_login_command</code></td><td>string</td><td>Command templates; <code>{password}</code> is replaced with <code>bot_auth_password</code>.</td></tr>
         </tbody>
       </table>
     </div>
@@ -563,6 +644,7 @@ releases/
         <option value="spam">Auto-spam</option>
         <option value="walk">Auto-walk</option>
         <option value="eat">Auto-eat</option>
+        <option value="swarm">Multi-bot</option>
         <option value="config">Configuration</option>
       </select>
       <span class="count-badge" id="cmdCount"></span>
@@ -652,9 +734,19 @@ releases/
         </thead>
         <tbody>
           <tr>
-            <td><b>2.0.0</b></td>
+            <td><b>2.1.0</b></td>
             <td><span class="chip green">latest</span></td>
             <td><code>windows/en.zip</code> <code>macos/en.zip</code> (arm64) <code>linux/en.zip</code><br><code>MinecraftBotClient-en.exe</code> <code>MinecraftBotClient-en</code><br><code>config</code> + <code>README</code> inside every package</td>
+            <td class="td-act">
+              <button class="btn btn-ghost btn-sm" data-dl-path="releases/2.1.0/windows/en.zip" data-dl-file="en.zip" title="Windows package (English)">Windows</button>
+              <button class="btn btn-ghost btn-sm" data-dl-path="releases/2.1.0/macos/en.zip" data-dl-file="en.zip" title="macOS package (English)">macOS</button>
+              <button class="btn btn-ghost btn-sm" data-dl-path="releases/2.1.0/linux/en.zip" data-dl-file="en.zip" title="Linux package (English)">Linux</button>
+            </td>
+          </tr>
+          <tr>
+            <td><b>2.0.0</b></td>
+            <td><span class="chip">archived</span></td>
+            <td><code>windows/en.zip</code> <code>macos/en.zip</code> <code>linux/en.zip</code><br><code>MinecraftBotClient-en.exe</code> <code>MinecraftBotClient-en</code><br><code>config</code> + <code>README</code> inside every package</td>
             <td class="td-act">
               <button class="btn btn-ghost btn-sm" data-dl-path="releases/2.0.0/windows/en.zip" data-dl-file="en.zip" title="Windows package (English)">Windows</button>
               <button class="btn btn-ghost btn-sm" data-dl-path="releases/2.0.0/macos/en.zip" data-dl-file="en.zip" title="macOS package (English)">macOS</button>
@@ -695,7 +787,7 @@ releases/
     <div class="notice info">
       <div>
         <b>Build layout</b>
-        <p>From v2.0.0 each platform lives under <code>releases/&lt;version&gt;/&lt;platform&gt;/</code> with <code>zh/</code> and <code>en/</code> folders plus ready-made <code>.zip</code> packages. Older releases keep the original Windows-only layout. Chinese editions of v2.0.0 are available from the download panel above.</p>
+        <p>From v2.0.0 each platform lives under <code>releases/&lt;version&gt;/&lt;platform&gt;/</code> with <code>zh/</code> and <code>en/</code> folders plus ready-made <code>.zip</code> packages. Older releases keep the original Windows-only layout. Chinese editions of v2.1.0 are available from the download panel above.</p>
       </div>
     </div>
   </div>
@@ -730,6 +822,14 @@ releases/
           <p>PyInstaller single-file executables unpack themselves at runtime, which heuristic scanners commonly flag. This is a false positive.</p>
           <p>Either whitelist the folder or run the project from source with <code>python main.py</code>.</p>
           <p>On macOS, Gatekeeper blocks unsigned binaries the same way. Right-click the file and choose Open, or run <code>xattr -d com.apple.quarantine ./MinecraftBotClient-en</code>.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Can I run many bots at once?</summary>
+        <div class="qa-body">
+          <p>Yes. Set <code>multi_bot_enabled</code> to <code>true</code> and choose a <code>bot_count</code> &mdash; 20, 100 or more. Each bot gets its own random username and connection, joining with a configurable delay between them.</p>
+          <p>With <code>bot_auth_enabled</code> on, every bot automatically sends your <code>/register</code> or <code>/login</code> command after joining, so it works on AuthMe-style servers. The console then controls the group: <code>.status</code>, <code>.say &lt;text&gt;</code> and <code>.exit</code>.</p>
         </div>
       </details>
 

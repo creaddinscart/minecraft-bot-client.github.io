@@ -275,7 +275,10 @@ MBC.toast = function (msg, kind) {
     'command_autocomplete', 'auto_eat', 'auto_eat_health_threshold',
     'auto_walk', 'auto_walk_waypoints', 'stop_walk_on_damage',
     'proximity_alerts', 'proximity_distance',
-    'human_actions', 'human_action_interval_min', 'human_action_interval_max'
+    'human_actions', 'human_action_interval_min', 'human_action_interval_max',
+    'multi_bot_enabled', 'bot_count', 'bot_name_prefix', 'bot_name_digits',
+    'bot_join_delay', 'bot_auth_enabled', 'bot_auth_mode', 'bot_auth_password',
+    'bot_auth_delay', 'bot_auth_register_command', 'bot_auth_login_command'
   ];
 
   var LIST_KEYS = { spam_messages: 1, auto_walk_waypoints: 1 };

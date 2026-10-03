@@ -1,7 +1,7 @@
 var MBC = {
   name: 'MinecraftBotClient',
   shortName: 'MBC',
-  version: '2.0.0',
+  version: '2.1.0',
   repo: 'creaddinscart/MinecraftBotClient',
   branch: 'main',
   links: {
@@ -39,8 +39,170 @@ var MBC_SOURCES = [
 
 var MBC_RELEASES = [
   {
-    version: '2.0.0',
+    version: '2.1.0',
     latest: true,
+    files: {
+      en: {
+        windows: {
+          zip: {
+            label: 'Windows package (English)',
+            file: 'en.zip',
+            path: 'releases/2.1.0/windows/en.zip'
+          },
+          exe: {
+            label: 'Windows client (English)',
+            file: 'MinecraftBotClient-en.exe',
+            path: 'releases/2.1.0/windows/en/MinecraftBotClient-en.exe'
+          },
+          cfg: {
+            label: 'Config file (English)',
+            file: 'config.en.json',
+            path: 'releases/2.1.0/windows/en/config.en.json',
+            bytes: 971
+          },
+          readme: {
+            label: 'Readme (English)',
+            file: 'README.en.md',
+            path: 'releases/2.1.0/windows/en/README.en.md',
+            bytes: 4757
+          }
+        },
+        macos: {
+          zip: {
+            label: 'macOS package (English, arm64)',
+            file: 'en.zip',
+            path: 'releases/2.1.0/macos/en.zip',
+            bytes: 9257611,
+            sha256: '7228494cb8ca1698baa6543834c338da046f0ae5f025dad91ae61a27b36d2b4a'
+          },
+          bin: {
+            label: 'macOS client (English, arm64)',
+            file: 'MinecraftBotClient-en',
+            path: 'releases/2.1.0/macos/en/MinecraftBotClient-en',
+            bytes: 9396464,
+            sha256: '7c2a0aeab381f3897221b282b53cf47d1065e8d13896d7b54c0ddbdf7b380bab'
+          },
+          cfg: {
+            label: 'Config file (English)',
+            file: 'config.en.json',
+            path: 'releases/2.1.0/macos/en/config.en.json',
+            bytes: 971
+          },
+          readme: {
+            label: 'Readme (English)',
+            file: 'README.en.md',
+            path: 'releases/2.1.0/macos/en/README.en.md',
+            bytes: 4917
+          }
+        },
+        linux: {
+          zip: {
+            label: 'Linux package (English)',
+            file: 'en.zip',
+            path: 'releases/2.1.0/linux/en.zip'
+          },
+          bin: {
+            label: 'Linux client (English)',
+            file: 'MinecraftBotClient-en',
+            path: 'releases/2.1.0/linux/en/MinecraftBotClient-en'
+          },
+          cfg: {
+            label: 'Config file (English)',
+            file: 'config.en.json',
+            path: 'releases/2.1.0/linux/en/config.en.json',
+            bytes: 971
+          },
+          readme: {
+            label: 'Readme (English)',
+            file: 'README.en.md',
+            path: 'releases/2.1.0/linux/en/README.en.md',
+            bytes: 4784
+          }
+        }
+      },
+      zh: {
+        windows: {
+          zip: {
+            label: 'Windows package (Chinese)',
+            file: 'zh.zip',
+            path: 'releases/2.1.0/windows/zh.zip'
+          },
+          exe: {
+            label: 'Windows client (Chinese)',
+            file: 'MinecraftBotClient-zh.exe',
+            path: 'releases/2.1.0/windows/zh/MinecraftBotClient-zh.exe'
+          },
+          cfg: {
+            label: 'Config file (Chinese)',
+            file: 'config.zh.json',
+            path: 'releases/2.1.0/windows/zh/config.zh.json',
+            bytes: 971
+          },
+          readme: {
+            label: 'Readme (Chinese)',
+            file: 'README.zh.md',
+            path: 'releases/2.1.0/windows/zh/README.zh.md',
+            bytes: 4685
+          }
+        },
+        macos: {
+          zip: {
+            label: 'macOS package (Chinese, arm64)',
+            file: 'zh.zip',
+            path: 'releases/2.1.0/macos/zh.zip',
+            bytes: 9258277,
+            sha256: '2eabaf7d2d1a3807b8eb9f43dce7c46f2d647fd101e50312887e02d4f2120705'
+          },
+          bin: {
+            label: 'macOS client (Chinese, arm64)',
+            file: 'MinecraftBotClient-zh',
+            path: 'releases/2.1.0/macos/zh/MinecraftBotClient-zh',
+            bytes: 9396800,
+            sha256: '33b06c2a044d3baafc57f5265b2d3c4c276e461913ff5387aca62e2b8548ecef'
+          },
+          cfg: {
+            label: 'Config file (Chinese)',
+            file: 'config.zh.json',
+            path: 'releases/2.1.0/macos/zh/config.zh.json',
+            bytes: 971
+          },
+          readme: {
+            label: 'Readme (Chinese)',
+            file: 'README.zh.md',
+            path: 'releases/2.1.0/macos/zh/README.zh.md',
+            bytes: 4866
+          }
+        },
+        linux: {
+          zip: {
+            label: 'Linux package (Chinese)',
+            file: 'zh.zip',
+            path: 'releases/2.1.0/linux/zh.zip'
+          },
+          bin: {
+            label: 'Linux client (Chinese)',
+            file: 'MinecraftBotClient-zh',
+            path: 'releases/2.1.0/linux/zh/MinecraftBotClient-zh'
+          },
+          cfg: {
+            label: 'Config file (Chinese)',
+            file: 'config.zh.json',
+            path: 'releases/2.1.0/linux/zh/config.zh.json',
+            bytes: 971
+          },
+          readme: {
+            label: 'Readme (Chinese)',
+            file: 'README.zh.md',
+            path: 'releases/2.1.0/linux/zh/README.zh.md',
+            bytes: 4733
+          }
+        }
+      }
+    }
+  },
+  {
+    version: '2.0.0',
+    latest: false,
     files: {
       en: {
         windows: {
@@ -394,6 +556,15 @@ var MBC_COMMANDS = [
     items: [
       { cmd: '.eat on',  desc: 'Enable auto-eat on damage' },
       { cmd: '.eat off', desc: 'Disable auto-eat on damage' }
+    ]
+  },
+  {
+    group: 'Multi-bot mode',
+    groupId: 'swarm',
+    items: [
+      { cmd: '.status',     desc: 'Show how many bots are connected' },
+      { cmd: '.say <text>', desc: 'Broadcast a chat message from every connected bot' },
+      { cmd: '.exit',       desc: 'Disconnect all bots and quit' }
     ]
   },
   {
