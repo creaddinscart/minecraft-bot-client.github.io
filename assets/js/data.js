@@ -20,19 +20,19 @@ var MBC = {
 
 var MBC_SOURCES = [
   {
-    id: 'github',
-    label: 'GitHub Raw',
-    note: 'Global CDN',
+    id: 'local',
+    label: 'This site',
+    note: 'Served from this website',
     raw: function (p) {
-      return 'https://raw.githubusercontent.com/' + MBC.repo + '/' + MBC.branch + '/' + p;
+      return p;
     }
   },
   {
-    id: 'local',
-    label: 'Local / Mirror',
-    note: 'Repository relative path',
+    id: 'github',
+    label: 'GitHub Raw',
+    note: 'Global CDN fallback',
     raw: function (p) {
-      return '../' + p;
+      return 'https://raw.githubusercontent.com/' + MBC.repo + '/' + MBC.branch + '/' + p;
     }
   }
 ];
